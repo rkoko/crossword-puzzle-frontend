@@ -6,6 +6,7 @@ $(document).ready(function() {
 
 function start() {
   $('button').on('click', function(event) {
+    document.querySelectorAll('input')
     event.stopPropagation()
     fetch('http://localhost:3000/home')
       .then(res => res.json())
@@ -32,11 +33,11 @@ function generate() {
 
   for (var i = 0; i < arr.length; i++) {
     for (var j = 0; j < arr[i].length; j++) {
-      arrText += `<input type="text" placeholder="letter">
+      arrText += `<input id=${i}-${j} type="text" placeholder="letter">
       </input>`;
     }
     $('#crossword').append(`<div>${arrText}</div>`);
     arrText = '';
   }
-  $('#crossword').append(`<input type='submit' placeholder='submit'>`)
+  $('#crossword').append(`<button type='submit'>Submit</button>`)
 }
