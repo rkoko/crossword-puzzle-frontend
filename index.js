@@ -11,7 +11,7 @@ function clickListener() {
   $('.empty').on('click', function() {
     let id = this.id
     $(`#in-${id}`).show()
-    // inputListener(id)
+    inputListener(id)
   })
 }
 
