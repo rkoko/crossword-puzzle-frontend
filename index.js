@@ -1,48 +1,67 @@
 $(document).ready(function() {
   // start()
   // generate()
-  // input()
+  input()
+  $('input').hide()
+  clickListener()
 })
 
-function start() {
-  $('button').on('click', function(event) {
-    document.querySelectorAll('input')
-    event.stopPropagation()
-    fetch('http://localhost:3000/home')
-      .then(res => res.json())
-      .then(json => display(json))
+function clickListener() {
+  $('.empty').on('click', function() {
+    let id = this.id
+    $(`#in-${id}`).show()
+    inputListener(id)
   })
 }
 
-// fetch(`http://localhost:3000/home`).then(res => res.json()).then(console.log(json))
-
-function display(json) {
-  json.forEach(function(word) {
-    $('#crossword').append(`<li> ${word.answer}, ${word.clue}`)
+function inputListener(id) {
+  $(`#${id}`).on('input', `#in-${id}`, function(id) {
+    let char = $(`#in-${id}`).val()
+    $(`#in-${id}`).hide()
+    $(`#${id}`).html(`${char.toUpperCase()}`)
   })
-}5
-
-function generate() {
-
-  var arr = [
-        [1, 2, 3, 4, 5],
-        [5, 6, 7, 8, 9],
-        [10, 11, 12, 13, 14],
-        [15, 16, 17, 18, 19],
-        [20, 21, 22, 23, 24]
-        ],
-    arrText = '';
-
-  for (var i = 0; i < arr.length; i++) {
-    for (var j = 0; j < arr[i].length; j++) {
-      arrText += `<input id=${i}-${j} type="text" placeholder="letter">
-      </input>`;
-    }
-    $('#crossword').append(`<div>${arrText}</div>`);
-    arrText = '';
-  }
-  $('#crossword').append(`<button type='submit'>Submit</button>`)
 }
+
+// function start() {
+//   $('button').on('click', function(event) {
+//     document.querySelectorAll('input')
+//     event.stopPropagation()
+//     fetch('http://localhost:3000/home')
+//       .then(res => res.json())
+//       .then(json => display(json))
+//   })
+// }
+//
+// // fetch(`http://localhost:3000/home`).then(res => res.json()).then(console.log(json))
+//
+// function display(json) {
+//   json.forEach(function(word) {
+//     $('#crossword').append(`<li> ${word.answer}, ${word.clue}`)
+//   })
+// }5
+//
+// function generate() {
+//
+//   var arr = [
+//         [1, 2, 3, 4, 5],
+//         [5, 6, 7, 8, 9],
+//         [10, 11, 12, 13, 14],
+//         [15, 16, 17, 18, 19],
+//         [20, 21, 22, 23, 24]
+//         ],
+//     arrText = '';
+//
+//   for (var i = 0; i < arr.length; i++) {
+//     for (var j = 0; j < arr[i].length; j++) {
+//       arrText += `<input id=${i}-${j} type="text" placeholder="letter">
+//       </input>`;
+//     }
+//     $('#crossword').append(`<div>${arrText}</div>`);
+//     arrText = '';
+//   }
+//   $('#crossword').append(`<button type='submit'>Submit</button>`)
+// }
+//
 
 function input() {
   $('button').on('click', function(event) {
@@ -51,8 +70,6 @@ function input() {
     for (var i = 0; i<userInput.length; i++){
       letters.push(userInput[i].value)
     }
-
     debugger
-
   })
 }
