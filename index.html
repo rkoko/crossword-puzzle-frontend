@@ -6,7 +6,7 @@
 
     <style>
 
-    .gridcontainer {
+    /*.gridcontainer {
       width: 76px;
       line-height: 0;
       border: solid black;
@@ -20,11 +20,63 @@
       padding: 10px;
       width: 18px;
       height: 18px;
+    }*/
+
+    /*.one-square {
+      border: solid black;
+      margin-top: -1rem;
+      margin-bottom: -1rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
 
-    .grid {
-      border: solid black;
-      margin-left: 10px;
+    .hold-row {
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-gap: 20px;
+    }*/
+
+    #wrapper {
+      border: 1px;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    div {
+      contentEditable: true;
+    }
+
+    .filled {
+      width: 40px;
+      height: 40px;
+      background: black;
+      border: 1px solid black;
+      padding: 0;
+      margin: 0;
+      float: left;
+    }
+
+    .empty {
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      padding: 0;
+      margin: 0;
+      float: left;
+    }
+
+    .numbered {
+      counter-increment: value;
+    }
+
+    .numbered:nth-of-type(n)::before {
+      content: counter(value);
+      font-size: 10px;
+      position: absolute;
     }
 
     </style>
@@ -37,40 +89,73 @@
 
     <button type="button">Generate a Crossword!</button><br>
 
-    <div id="crossword">
-      <div class="ui grid">
-        <div class="column griditem" id="1">r</div>
-        <div class="column" id="2">i</div>
-        <div class="column" id="3">n</div>
-        <div class="column" id="4">d</div>
-        <div class="column" id="5">a</div>
-      </div>
-
-      <div class="ui grid">
-        <div class="column" id="6">i</div>
-        <div class="column" id="7">h</div>
-        <div class="column" id="8"></div>
-        <div class="column" id="9"></div>
-        <div class="column" id="10"></div>
-      </div>
-
-      <div class="ui grid">
-        <div class="column" id="11"></div>
-        <div class="column" id="12">o</div>
-        <div class="column" id="13"></div>
-        <div class="column" id="14"></div>
-        <div class="column" id="15"></div>
-      </div>
-
-
-      <div class="ui grid">
-        <div class="column" id="16"></div>
-        <div class="column" id="17">p</div>
-        <div class="column" id="18"></div>
-        <div class="column" id="19"></div>
-        <div class="column" id="20"></div>
-      </div>
+    <div id="wrapper"> <!-- 15 x 15 block -->
+      <!-- first row -->
+      <div class="empty numbered"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <div class="empty"></div>
+      <!-- second row -->
+      <div class="empty"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <!-- third row -->
+      <div class="empty"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <!-- fourth row -->
+      <div class="empty"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <!-- fifth row -->
+      <div class="empty"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
+      <div class="filled"></div>
     </div>
+
+    <!-- <div id="crossword" class="ui equal width center aligned padded grid">
+      <div class="row">
+        <div class="column one-square" id="1">r</div>
+        <div class="column one-square" id="2">i</div>
+        <div class="column one-square" id="3">n</div>
+        <div class="column one-square" id="4">d</div>
+        <div class="column one-square" id="5">a</div>
+      </div>
+
+      <div class="row">
+        <div class="column one-square" id="6">i</div>
+        <div class="column one-square" id="7">h</div>
+        <div class="column one-square" id="8"></div>
+        <div class="column one-square" id="9"></div>
+        <div class="column one-square" id="10"></div>
+      </div>
+
+      <div class="row">
+        <div class="column one-square" id="11"></div>
+        <div class="column one-square" id="12">o</div>
+        <div class="column one-square" id="13"></div>
+        <div class="column one-square" id="14"></div>
+        <div class="column one-square" id="15"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="column hold-square one-square" id="16"></div>
+        <div class="column one-square" id="17">p</div>
+        <div class="column one-square" id="18"></div>
+        <div class="column one-square" id="19"></div>
+        <div class="column one-square" id="20"></div>
+      </div>
+    </div> -->
 
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

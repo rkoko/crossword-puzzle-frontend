@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  start()
-  generate()
+  // start()
+  // generate()
 })
 
 function start() {
