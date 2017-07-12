@@ -1,26 +1,26 @@
 $(document).ready(function() {
   // start()
   // generate()
-  input()
   $('input').hide()
   clickListener()
+  input()
 })
 
 function clickListener() {
   $('.empty').on('click', function() {
     let id = this.id
     $(`#in-${id}`).show()
-    inputListener(id)
+    // inputListener(id)
   })
 }
 
-function inputListener(id) {
-  $(`#${id}`).on('input', `#in-${id}`, function(id) {
-    let char = $(`#in-${id}`).val()
-    $(`#in-${id}`).hide()
-    $(`#${id}`).html(`${char.toUpperCase()}`)
-  })
-}
+// function inputListener(id) {
+//   $(`#${id}`).on('input', `#in-${id}`, function(id) {
+//     let char = $(`#in-${id}`).val()
+//     $(`#in-${id}`).hide()
+//     $(`#${id}`).html(`${char.toUpperCase()}`)
+//   })
+// }
 
 // function start() {
 //   $('button').on('click', function(event) {
@@ -65,11 +65,12 @@ function inputListener(id) {
 
 function input() {
   $('button').on('click', function(event) {
+
     let userInput = $('input')
     let letters =[]
     for (var i = 0; i<userInput.length; i++){
       letters.push(userInput[i].value)
     }
-    debugger
+debugger
   })
 }
