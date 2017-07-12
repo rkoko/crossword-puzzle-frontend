@@ -1,7 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="semantic/out/semantic.min.css">
     <meta charset="utf-8">
+
+    <style>
+
+    .gridcontainer {
+      width: 76px;
+      line-height: 0;
+      border: solid black;
+      border-width: 0 1px 1px 0;
+    }
+
+    .griditem {
+      display:inline-block;
+      border: solid black;
+      border-width: 1px ;
+      padding: 10px;
+      width: 18px;
+      height: 18px;
+    }
+
+    .grid {
+      border: solid black;
+    }
+
+    </style>
     <title></title>
   </head>
   <body>
@@ -9,14 +34,46 @@
 
     </div>
 
-    <button type="button">Generate a Crossword!</button>
+    <button type="button">Generate a Crossword!</button><br>
 
     <div id="crossword">
+      <div class="ui grid">
+        <div class="column griditem" id="1">r</div>
+        <div class="column" id="2">i</div>
+        <div class="column" id="3">n</div>
+        <div class="column" id="4">d</div>
+        <div class="column" id="5">a</div>
+      </div>
 
+      <div class="ui grid">
+        <div class="column" id="6">i</div>
+        <div class="column" id="7">h</div>
+        <div class="column" id="8"></div>
+        <div class="column" id="9"></div>
+        <div class="column" id="10"></div>
+      </div>
+
+      <div class="ui grid">
+        <div class="column" id="11"></div>
+        <div class="column" id="12">o</div>
+        <div class="column" id="13"></div>
+        <div class="column" id="14"></div>
+        <div class="column" id="15"></div>
+      </div>
+
+
+      <div class="ui grid">
+        <div class="column" id="16"></div>
+        <div class="column" id="17">p</div>
+        <div class="column" id="18"></div>
+        <div class="column" id="19"></div>
+        <div class="column" id="20"></div>
+      </div>
     </div>
 
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>"
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="semantic/out/semantic.js"></script>
     <script type="text/javascript" src="index.js"></script>
     <!-- <script type="text/javascript" src="components/crossword.js"></script>
     <script type="text/javascript" src="components/game.js"></script>
