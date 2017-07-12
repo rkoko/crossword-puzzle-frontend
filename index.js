@@ -4,6 +4,7 @@ $(document).ready(function() {
   input()
   $('input').hide()
   clickListener()
+  check()
 })
 
 function clickListener() {
@@ -15,10 +16,16 @@ function clickListener() {
 }
 
 function inputListener(id) {
-  $(`#${id}`).on('input', `#in-${id}`, function(id) {
-    let char = $(`#in-${id}`).val()
-    $(`#in-${id}`).hide()
-    $(`#${id}`).html(`${char.toUpperCase()}`)
+  $(`#${id}`).on('keyup', `#in-${id}`, function(id) {
+    let char = $(`#${id.target.id}`).submit().val()
+    $(`#${id.target.id}`).hide()
+    $(`#p-${id.target.id.split("-")[1]}`).html(`${char.toUpperCase()}`)
+  })
+}
+
+function check() {
+  $('#submit').on('click', function() {
+    debugger
   })
 }
 

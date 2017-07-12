@@ -17,6 +17,11 @@
       contentEditable: true;
     }
 
+    .center-align {
+      text-align: center;
+      margin-top: 20px;
+    }
+
     .filled {
       width: 40px;
       height: 40px;
@@ -46,6 +51,17 @@
       position: absolute;
     }
 
+    .letters {
+      font-size: 22px;
+      margin: 5px;
+      margin-left: 10px;
+    }
+
+    .textbox {
+      width: 40px;
+      height: 40px;
+    }
+
     </style>
     <title></title>
   </head>
@@ -54,42 +70,46 @@
 
     </div>
 
-    <button type="button">Generate a Crossword!</button><br>
+    <div class="center-align">
+      <button type="button" class="large ui button" id="generate">Generate a Crossword!</button><br><br>
+    </div>
 
     <div id="wrapper"> <!-- 15 x 15 block -->
       <!-- first row -->
-      <div class="empty numbered" id="1"><input type="text" id="in-1" maxlength="1"></div>
-      <div class="empty" id="2"><input type="text" id="in-2" maxlength="1"></div>
-      <div class="empty" id="3"><input type="text" id="in-3" maxlength="1"></div>
-      <div class="empty" id="4"><input type="text" id="in-4" maxlength="1"></div>
-      <div class="empty" id="5"><input type="text" id="in-5" maxlength="1"></div>
+      <div class="empty numbered" id="1"><input type="text" id="in-1" class="textbox" maxlength="1"><p class="letters" id="p-1"></div>
+      <div class="empty" id="2"><input type="text" id="in-2" class="textbox" maxlength="1"><p class="letters" id="p-2"></div>
+      <div class="empty" id="3"><input type="text" id="in-3" class="textbox" maxlength="1"><p class="letters" id="p-3"></div>
+      <div class="empty" id="4"><input type="text" id="in-4" class="textbox" maxlength="1"><p class="letters" id="p-4"></div>
+      <div class="empty" id="5"><input type="text" id="in-5" class="textbox" maxlength="1"><p class="letters" id="p-5"></div>
       <!-- second row -->
-      <div class="empty" id="6"><input type="text" id="in-6" maxlength="1"></div>
-      <div class="filled" id="7"><input type="text" id="in-7" maxlength="1"></div>
-      <div class="filled" id="8"><input type="text" id="in-8" maxlength="1"></div>
-      <div class="filled" id="9"><input type="text" id="in-9" maxlength="1"></div>
-      <div class="filled" id="10"><input type="text" id="in-10" maxlength="1"></div>
+      <div class="empty" id="6"><input type="text" id="in-6" class="textbox" maxlength="1"><p class="letters" id="p-6"></div>
+      <div class="filled" id="7"><input type="text" id="in-7" class="textbox" maxlength="1"><p class="letters" id="p-7"></div>
+      <div class="filled" id="8"><input type="text" id="in-8" class="textbox" maxlength="1"><p class="letters" id="p-8"></div>
+      <div class="filled" id="9"><input type="text" id="in-9" class="textbox" maxlength="1"><p class="letters" id="p-9"></div>
+      <div class="filled" id="10"><input type="text" id="in-10" class="textbox" maxlength="1"><p class="letters" id="p-10"></div>
       <!-- third row -->
-      <div class="empty" id="11"><input type="text" id="in-11" maxlength="1"></div>
+      <div class="empty" id="11"><input type="text" id="in-11" class="textbox" maxlength="1"><p class="letters" id="p-11"></div>
       <div class="filled" id="12"></div>
       <div class="filled" id="13"></div>
       <div class="filled" id="14"></div>
       <div class="filled" id="15"></div>
       <!-- fourth row -->
-      <div class="empty" id="16"><input type="text" id="in-16" maxlength="1"></div>
+      <div class="empty" id="16"><input type="text" id="in-16" class="textbox" maxlength="1"><p class="letters" id="p-16"></div>
       <div class="filled" id="17"></div>
       <div class="filled" id="18"></div>
       <div class="filled" id="19"></div>
       <div class="filled" id="20"></div>
       <!-- fifth row -->
-      <div class="empty" id="21"><input type="text" id="in-21" maxlength="1"></div>
+      <div class="empty" id="21"><input type="text" id="in-21" class="textbox" maxlength="1"><p class="letters" id="p-21"></div>
       <div class="filled" id="22"></div>
       <div class="filled" id="23"></div>
       <div class="filled" id="24"></div>
       <div class="filled" id="25"></div>
     </div>
 
-    <button type="button" name="Submit">Submit</button>
+    <div class="center-align">
+      <button type="button" class="mini ui button" name="Submit" id="submit">Submit</button>
+    </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="semantic/out/semantic.js"></script>
