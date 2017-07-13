@@ -90,6 +90,7 @@ function matchAnswers(key){
 
   if (answers.join("").toLowerCase() === key.input.join("").toLowerCase()) {
     alert("You Win!!!")
+    reset()///we need to check if this works
   } else {
     alert("Try Again")
   }
@@ -100,6 +101,7 @@ function start() {
     document.querySelectorAll('input')
     event.stopPropagation()
     getWords()
+    startPause()
   })
 }
 

@@ -104,13 +104,19 @@
     .ui.grid {
       margin-right: 50rem !important;
     }
-
+    #output{
+      width:120px;
+      height:25px;
+      background-color:#CCC;
+      border:1px solid #999;
+    }
     </style>
     <title></title>
   </head>
   <body>
-    <div id="user">
-
+    <p id="output"></p>
+    <div id="controls">
+        <button id="startPause" onclick="startPause()">Pause</button>
     </div>
 
     <div class="center-align">
@@ -290,6 +296,7 @@
     <script src="semantic/out/semantic.js"></script>
     <script type="text/javascript" src="componenets/answerKey.js"></script>
     <script type="text/javascript" src="index.js"></script>
+      <script type="text/javascript" src="stopwatch.js"></script>
     <script type="text/javascript" src="api-adapter.js"></script>
     <!-- <script type="text/javascript" src="components/crossword.js"></script>
     <script type="text/javascript" src="components/game.js"></script>
