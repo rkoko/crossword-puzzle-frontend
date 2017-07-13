@@ -37,7 +37,7 @@ function answerKey(json){
   for(let i = 0; i < json.length; i++){
     key.answers.push(json[i])
   }
-  debugger
+  // debugger
 }
 
 function submitInput() {
@@ -107,15 +107,15 @@ function display(json) {
   $('#across').empty()
   $('#down').empty()
 
-  $('#across').append(`<li>1. ${json[0].clue}</li>`)
-  $('#across').append(`<li>3. ${json[2].clue}</li>`)
-  $('#across').append(`<li>4. ${json[4].clue}</li>`)
-  $('#across').append(`<li>6. ${json[6].clue}</li>`)
-  $('#across').append(`<li>7. ${json[8].clue}</li>`)
+  $('#across').append(`<li><p><strong>1.</strong> ${json[0].clue}</p></li><br>`)
+  $('#across').append(`<li><p><strong>3.</strong> ${json[2].clue}</p></li><br>`)
+  $('#across').append(`<li><p><strong>4.</strong> ${json[4].clue}</p></li><br>`)
+  $('#across').append(`<li><p><strong>6.</strong> ${json[6].clue}</p></li><br>`)
+  $('#across').append(`<li><p><strong>7.</strong> ${json[8].clue}</p></li><br>`)
 
-  $('#down').append(`<li>2. ${json[1].clue}</li>`)
-  $('#down').append(`<li>3. ${json[3].clue}</li>`)
-  $('#down').append(`<li>5. ${json[5].clue}</li>`)
-  $('#down').append(`<li>6. ${json[7].clue}</li>`)
+  $('#down').append(`<li><p><strong>2.</strong> ${json[1].clue}</p></li><br>`)
+  $('#down').append(`<li><p><strong>3.</strong> ${json[3].clue}</p></li><br>`)
+  $('#down').append(`<li><p><strong>5.</strong> ${json[5].clue}</p></li><br>`)
+  $('#down').append(`<li><p><strong>6.</strong> ${json[7].clue}</p></li><br>`)
   return json
 }

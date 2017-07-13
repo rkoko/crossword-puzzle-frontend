@@ -1,1 +1,5 @@
+class Crossword {
+  constructor() {
 
+  }
+}
