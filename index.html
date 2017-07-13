@@ -8,8 +8,8 @@
 
     #wrapper {
       border: 1px;
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
       margin-left: 75px;
       padding-bottom: 50px;
       text-align: left;
@@ -30,19 +30,19 @@
     }
 
     .filled {
-      width: 25px;
-      height: 25px;
-      background: black;
-      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      background: grey;
+      border: 1px;
       padding: 0;
       margin: 0;
       float: left;
     }
 
     .empty {
-      width: 25px;
-      height: 25px;
-      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      border: 1px solid grey;
       padding: 0;
       margin: 0;
       float: left;
@@ -59,14 +59,15 @@
     }
 
     .letters {
-      font-size: 22px;
+      font-size: 14px;
+      color: grey;
       margin: 5px;
       margin-left: 10px;
     }
 
     .textbox {
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
     }
 
     .clearfix {
@@ -96,18 +97,18 @@
       <div class="empty" id="3"><input type="text" id="in-3" class="textbox" maxlength="1"><p class="letters" id="p-3"></div>
       <div class="empty" id="4"><input type="text" id="in-4" class="textbox" maxlength="1"><p class="letters" id="p-4"></div>
       <div class="empty numbered" id="5"><input type="text" id="in-5" class="textbox" maxlength="1"><p class="letters" id="p-5"></div>
-      <div class="filled" id="6"><input type="text" id="in-6" class="textbox" maxlength="1"><p class="letters" id="p-6"></div>
-      <div class="filled" id="7"><input type="text" id="in-7" class="textbox" maxlength="1"><p class="letters" id="p-7"></div>
-      <div class="filled" id="8"><input type="text" id="in-8" class="textbox" maxlength="1"><p class="letters" id="p-8"></div>
+      <div class="filled" id="6"></div>
+      <div class="filled" id="7"></div>
+      <div class="filled" id="8"></div>
       <!-- second row -->
-      <div class="filled" id="9"><input type="text" id="in-9" class="textbox" maxlength="1"><p class="letters" id="p-9"></div>
-      <div class="filled" id="10"><input type="text" id="in-10" class="textbox" maxlength="1"><p class="letters" id="p-10"></div>
-      <div class="filled" id="11"><input type="text" id="in-11" class="textbox" maxlength="1"><p class="letters" id="p-11"></div>
+      <div class="filled" id="9"></div>
+      <div class="filled" id="10"></div>
+      <div class="filled" id="11"></div>
       <div class="filled" id="12"></div>
       <div class="empty" id="13"><input type="text" id="in-13" class="textbox" maxlength="1"><p class="letters" id="p-13"></div>
       <div class="filled" id="14"></div>
       <div class="filled" id="15"></div>
-      <div class="filled" id="16"><input type="text" id="in-16" class="textbox" maxlength="1"><p class="letters" id="p-16"></div>
+      <div class="filled" id="16"></div>
       <!-- third row -->
       <div class="filled" id="17"></div>
       <div class="filled" id="18"></div>
@@ -228,6 +229,15 @@
     </div>
 
     <div id="clues">
+      <div class="">
+        <h2>Across</h2>
+        <div id="across"> </div>
+      </div>
+
+      <div class="">
+        <h2>Down</h2>
+        <div id="down"> </div>
+      </div>
 
     </div>
 

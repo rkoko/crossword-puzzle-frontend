@@ -18,6 +18,7 @@ function inputListener(id) {
   $(`#${id}`).on('keyup', `#in-${id}`, function(id) {
     let char = $(`#${id.target.id}`).submit().val()
     $(`#${id.target.id}`).hide()
+
     $(`#p-${id.target.id.split("-")[1]}`).html(`${char.toUpperCase()}`)
   })
 }
@@ -33,9 +34,10 @@ function getWords(){
 var key = new AnswerKey()
 
 function answerKey(json){
-  let acrossAnswer = json[0].answer
-  let downAnswer = json[1].answer
-  key.answers.push(acrossAnswer, downAnswer)
+  for(let i = 0; i < json.length; i++){
+    key.answers.push(json[i])
+  }
+  debugger
 }
 
 function submitInput() {
@@ -51,17 +53,42 @@ function submitInput() {
 }
 
 function submittedAnswer(letters){
-  let down = letters.splice(5)
-  down.unshift(letters[0])
-  down = down.join("")
-  let across = letters.join("")
-  let submitted = [down, across]
-  key.input.push(across, down)
+  debugger
+  let oneAccross = letters.slice(0, 5)
+  let twoDown = letters.slice(4, 8)
+  twoDown.push(letters[10])
+  let threeAcross = letters.slice(8, 11)
+  let threeDown = letters.slice(11, 15)
+  threeDown.unshift(letters[8])
+  let fourAcross = letters.slice(14, 19)
+  let fiveDown = letters.slice(18, 20)
+  fiveDown.push(letters[22])
+  let sixAcross = letters.slice(20, 23)
+  let sixDown = letters.slice(23, 26)
+  sixDown.unshift(letters[20])
+  sixDown.push(letters[30])
+  let sevenAcross = letters.slice(26, letters.length)
+
+  key.input.push(
+    oneAccross.join(""),
+    twoDown.join(""),
+    threeAcross.join(""),
+    threeDown.join(""),
+    fourAcross.join(""),
+    fiveDown.join(""),
+    sixAcross.join(""),
+    sixDown.join(""),
+    sevenAcross.join("")
+  )
   matchAnswers(key)
 }
 
 function matchAnswers(key){
-  if (key.answers.join("") === key.input.join("")) {
+  let answers = key.answers.map(function(answer) {
+    return answer.answer
+  })
+
+  if (answers.join("").toLowerCase() === key.input.join("").toLowerCase()) {
     alert("You Win!!!")
   } else {
     alert("Try Again")
@@ -77,10 +104,18 @@ function start() {
 }
 
 function display(json) {
-  $('#clues').empty()
-  console.log("hi")
-  for (let i = 0; i<json.length; i++){
-  $('#clues').append(`<li>${json[i].clue}</li>`)
-}
-return json
+  $('#across').empty()
+  $('#down').empty()
+
+  $('#across').append(`<li>1. ${json[0].clue}</li>`)
+  $('#across').append(`<li>3. ${json[2].clue}</li>`)
+  $('#across').append(`<li>4. ${json[4].clue}</li>`)
+  $('#across').append(`<li>6. ${json[6].clue}</li>`)
+  $('#across').append(`<li>7. ${json[8].clue}</li>`)
+
+  $('#down').append(`<li>2. ${json[1].clue}</li>`)
+  $('#down').append(`<li>3. ${json[3].clue}</li>`)
+  $('#down').append(`<li>5. ${json[5].clue}</li>`)
+  $('#down').append(`<li>6. ${json[7].clue}</li>`)
+  return json
 }
