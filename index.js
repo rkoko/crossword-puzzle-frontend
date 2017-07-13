@@ -1,10 +1,9 @@
 $(document).ready(function() {
-  // start()
-  // generate()
-  input()
+  start()
   $('input').hide()
   clickListener()
-  check()
+  submitInput()
+  // matchAnswers(submitInput, answer)
 })
 
 function clickListener() {
@@ -23,60 +22,65 @@ function inputListener(id) {
   })
 }
 
-function check() {
-  $('#submit').on('click', function() {
-    debugger
-  })
+
+function getWords(){
+  fetch('http://localhost:3000/home')
+        .then(res => res.json())
+        .then(json => display(json))
+        .then(json => answerKey(json))
 }
 
-// function start() {
-//   $('button').on('click', function(event) {
-//     document.querySelectorAll('input')
-//     event.stopPropagation()
-//     fetch('http://localhost:3000/home')
-//       .then(res => res.json())
-//       .then(json => display(json))
-//   })
-// }
-//
-// // fetch(`http://localhost:3000/home`).then(res => res.json()).then(console.log(json))
-//
-// function display(json) {
-//   json.forEach(function(word) {
-//     $('#crossword').append(`<li> ${word.answer}, ${word.clue}`)
-//   })
-// }5
-//
-// function generate() {
-//
-//   var arr = [
-//         [1, 2, 3, 4, 5],
-//         [5, 6, 7, 8, 9],
-//         [10, 11, 12, 13, 14],
-//         [15, 16, 17, 18, 19],
-//         [20, 21, 22, 23, 24]
-//         ],
-//     arrText = '';
-//
-//   for (var i = 0; i < arr.length; i++) {
-//     for (var j = 0; j < arr[i].length; j++) {
-//       arrText += `<input id=${i}-${j} type="text" placeholder="letter">
-//       </input>`;
-//     }
-//     $('#crossword').append(`<div>${arrText}</div>`);
-//     arrText = '';
-//   }
-//   $('#crossword').append(`<button type='submit'>Submit</button>`)
-// }
-//
+var key = new AnswerKey()
 
-function input() {
-  $('button').on('click', function(event) {
+function answerKey(json){
+  let acrossAnswer = json[0].answer
+  let downAnswer = json[1].answer
+  key.answers.push(acrossAnswer, downAnswer)
+}
+
+function submitInput() {
+  $('#submit').on('click', function(event) {
     let userInput = $('input')
     let letters =[]
     for (var i = 0; i<userInput.length; i++){
       letters.push(userInput[i].value)
     }
-    debugger
+    submittedAnswer(letters)
   })
+
+}
+
+function submittedAnswer(letters){
+  let down = letters.splice(5)
+  down.unshift(letters[0])
+  down = down.join("")
+  let across = letters.join("")
+  let submitted = [down, across]
+  key.input.push(across, down)
+  matchAnswers(key)
+}
+
+function matchAnswers(key){
+  if (key.answers.join("") === key.input.join("")) {
+    alert("You Win!!!")
+  } else {
+    alert("Try Again")
+  }
+}
+
+function start() {
+  $('#generate').on('click', function(event) {
+    document.querySelectorAll('input')
+    event.stopPropagation()
+    getWords()
+  })
+}
+
+function display(json) {
+  $('#clues').empty()
+  console.log("hi")
+  for (let i = 0; i<json.length; i++){
+  $('#clues').append(`<li>${json[i].clue}</li>`)
+}
+return json
 }
