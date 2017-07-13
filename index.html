@@ -10,7 +10,9 @@
       border: 1px;
       width: 200px;
       height: 200px;
-      margin: 0 auto;
+      margin-left: 75px;
+      padding-bottom: 50px;
+      text-align: left;
     }
 
     div {
@@ -20,6 +22,11 @@
     .center-align {
       text-align: center;
       margin-top: 20px;
+    }
+
+    .right-align {
+      text-align: right;
+      margin-right: 50px;
     }
 
     .filled {
@@ -62,6 +69,14 @@
       height: 25px;
     }
 
+    .clearfix {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+
     </style>
     <title></title>
   </head>
@@ -80,24 +95,19 @@
       <div class="empty" id="2"><input type="text" id="in-2" class="textbox" maxlength="1"><p class="letters" id="p-2"></div>
       <div class="empty" id="3"><input type="text" id="in-3" class="textbox" maxlength="1"><p class="letters" id="p-3"></div>
       <div class="empty" id="4"><input type="text" id="in-4" class="textbox" maxlength="1"><p class="letters" id="p-4"></div>
-      <div class="empty" id="5"><input type="text" id="in-5" class="textbox" maxlength="1"><p class="letters" id="p-5"></div>
-      <div class="empty" id="6"><input type="text" id="in-6" class="textbox" maxlength="1"><p class="letters" id="p-6"></div>
+      <div class="empty numbered" id="5"><input type="text" id="in-5" class="textbox" maxlength="1"><p class="letters" id="p-5"></div>
+      <div class="filled" id="6"><input type="text" id="in-6" class="textbox" maxlength="1"><p class="letters" id="p-6"></div>
       <div class="filled" id="7"><input type="text" id="in-7" class="textbox" maxlength="1"><p class="letters" id="p-7"></div>
       <div class="filled" id="8"><input type="text" id="in-8" class="textbox" maxlength="1"><p class="letters" id="p-8"></div>
       <!-- second row -->
       <div class="filled" id="9"><input type="text" id="in-9" class="textbox" maxlength="1"><p class="letters" id="p-9"></div>
       <div class="filled" id="10"><input type="text" id="in-10" class="textbox" maxlength="1"><p class="letters" id="p-10"></div>
-      <div class="filled" id="7"></div>
-      <div class="filled" id="8"></div>
-      <div class="filled" id="9"></div>
-      <div class="filled" id="10"></div>
-      <!-- third row -->
-      <div class="empty" id="11"><input type="text" id="in-11" class="textbox" maxlength="1"><p class="letters" id="p-11"></div>
+      <div class="filled" id="11"><input type="text" id="in-11" class="textbox" maxlength="1"><p class="letters" id="p-11"></div>
       <div class="filled" id="12"></div>
-      <div class="filled" id="13"></div>
+      <div class="empty" id="13"><input type="text" id="in-13" class="textbox" maxlength="1"><p class="letters" id="p-13"></div>
       <div class="filled" id="14"></div>
       <div class="filled" id="15"></div>
-      <div class="empty" id="16"><input type="text" id="in-16" class="textbox" maxlength="1"><p class="letters" id="p-16"></div>
+      <div class="filled" id="16"><input type="text" id="in-16" class="textbox" maxlength="1"><p class="letters" id="p-16"></div>
       <!-- third row -->
       <div class="filled" id="17"></div>
       <div class="filled" id="18"></div>
@@ -112,23 +122,23 @@
       <div class="filled" id="26"></div>
       <div class="filled" id="27"></div>
       <div class="filled" id="28"></div>
-      <div class="filled" id="29"></div>
+      <div class="empty" id="29"><input type="text" id="in-29" class="textbox" maxlength="1"><p class="letters" id="p-29"></div>
       <div class="filled" id="30"></div>
       <div class="filled" id="31"></div>
       <div class="filled" id="32"></div>
       <!-- fifth row -->
       <div class="filled" id="33"></div>
       <div class="filled" id="34"></div>
-      <div class="filled" id="35"></div>
-      <div class="filled" id="36"></div>
-      <div class="filled" id="37"></div>
+      <div class="empty numbered" id="35"><input type="text" id="in-35" class="textbox" maxlength="1"><p class="letters" id="p-35"></div>
+      <div class="empty" id="36"><input type="text" id="in-36" class="textbox" maxlength="1"><p class="letters" id="p-36"></div>
+      <div class="empty" id="37"><input type="text" id="in-37" class="textbox" maxlength="1"><p class="letters" id="p-37"></div>
       <div class="filled" id="38"></div>
       <div class="filled" id="39"></div>
       <div class="filled" id="40"></div>
       <!-- sixth row -->
       <div class="filled" id="41"></div>
       <div class="filled" id="42"></div>
-      <div class="filled" id="43"></div>
+      <div class="empty" id="43"><input type="text" id="in-43" class="textbox" maxlength="1"><p class="letters" id="p-43"></div>
       <div class="filled" id="44"></div>
       <div class="filled" id="45"></div>
       <div class="filled" id="46"></div>
@@ -137,7 +147,7 @@
       <!-- seventh row -->
       <div class="filled" id="49"></div>
       <div class="filled" id="50"></div>
-      <div class="filled" id="51"></div>
+      <div class="empty" id="51"><input type="text" id="in-51" class="textbox" maxlength="1"><p class="letters" id="p-51"></div>
       <div class="filled" id="52"></div>
       <div class="filled" id="53"></div>
       <div class="filled" id="54"></div>
@@ -146,7 +156,7 @@
       <!-- eighth row -->
       <div class="filled" id="57"></div>
       <div class="filled" id="58"></div>
-      <div class="filled" id="59"></div>
+      <div class="empty" id="59"><input type="text" id="in-59" class="textbox" maxlength="1"><p class="letters" id="p-59"></div>
       <div class="filled" id="60"></div>
       <div class="filled" id="61"></div>
       <div class="filled" id="62"></div>
@@ -155,11 +165,11 @@
       <!-- ninth row -->
       <div class="filled" id="65"></div>
       <div class="filled" id="66"></div>
-      <div class="filled" id="67"></div>
-      <div class="filled" id="68"></div>
-      <div class="filled" id="69"></div>
-      <div class="filled" id="70"></div>
-      <div class="filled" id="71"></div>
+      <div class="empty numbered" id="67"><input type="text" id="in-67" class="textbox" maxlength="1"><p class="letters" id="p-67"></div>
+      <div class="empty" id="68"><input type="text" id="in-68" class="textbox" maxlength="1"><p class="letters" id="p-68"></div>
+      <div class="empty" id="69"><input type="text" id="in-69" class="textbox" maxlength="1"><p class="letters" id="p-69"></div>
+      <div class="empty" id="70"><input type="text" id="in-70" class="textbox" maxlength="1"><p class="letters" id="p-70"></div>
+      <div class="empty numbered" id="71"><input type="text" id="in-71" class="textbox" maxlength="1"><p class="letters" id="p-71"></div>
       <div class="filled" id="72"></div>
       <!-- tenth row -->
       <div class="filled" id="73"></div>
@@ -168,23 +178,23 @@
       <div class="filled" id="76"></div>
       <div class="filled" id="77"></div>
       <div class="filled" id="78"></div>
-      <div class="filled" id="79"></div>
+      <div class="empty" id="79"><input type="text" id="in-79" class="textbox" maxlength="1"><p class="letters" id="p-79"></div>
       <div class="filled" id="80"></div>
       <!-- eleventh row -->
       <div class="filled" id="81"></div>
       <div class="filled" id="82"></div>
       <div class="filled" id="83"></div>
       <div class="filled" id="84"></div>
-      <div class="filled" id="85"></div>
-      <div class="filled" id="86"></div>
-      <div class="filled" id="87"></div>
+      <div class="empty numbered" id="85"><input type="text" id="in-85" class="textbox" maxlength="1"><p class="letters" id="p-85"></div>
+      <div class="empty" id="86"><input type="text" id="in-86" class="textbox" maxlength="1"><p class="letters" id="p-86"></div>
+      <div class="empty" id="87"><input type="text" id="in-87" class="textbox" maxlength="1"><p class="letters" id="p-87"></div>
       <div class="filled" id="88"></div>
       <!-- twelth row -->
       <div class="filled" id="89"></div>
       <div class="filled" id="90"></div>
       <div class="filled" id="91"></div>
       <div class="filled" id="92"></div>
-      <div class="filled" id="93"></div>
+      <div class="empty" id="93"><input type="text" id="in-93" class="textbox" maxlength="1"><p class="letters" id="p-93"></div>
       <div class="filled" id="94"></div>
       <div class="filled" id="95"></div>
       <div class="filled" id="96"></div>
@@ -193,7 +203,7 @@
       <div class="filled" id="98"></div>
       <div class="filled" id="99"></div>
       <div class="filled" id="100"></div>
-      <div class="filled" id="101"></div>
+      <div class="empty" id="101"><input type="text" id="in-101" class="textbox" maxlength="1"><p class="letters" id="p-101"></div>
       <div class="filled" id="102"></div>
       <div class="filled" id="103"></div>
       <div class="filled" id="104"></div>
@@ -202,26 +212,26 @@
       <div class="filled" id="106"></div>
       <div class="filled" id="107"></div>
       <div class="filled" id="108"></div>
-      <div class="filled" id="109"></div>
+      <div class="empty" id="109"><input type="text" id="in-109" class="textbox" maxlength="1"><p class="letters" id="p-109"></div>
       <div class="filled" id="110"></div>
       <div class="filled" id="111"></div>
       <div class="filled" id="112"></div>
       <!-- sixth row -->
-      <div class="filled" id="113"></div>
-      <div class="filled" id="114"></div>
-      <div class="filled" id="115"></div>
-      <div class="filled" id="116"></div>
-      <div class="filled" id="117"></div>
-      <div class="filled" id="118"></div>
-      <div class="filled" id="119"></div>
-      <div class="filled" id="120"></div>
+      <div class="empty numbered" id="113"><input type="text" id="in-113" class="textbox" maxlength="1"><p class="letters" id="p-113"></div>
+      <div class="empty" id="114"><input type="text" id="in-114" class="textbox" maxlength="1"><p class="letters" id="p-114"></div>
+      <div class="empty" id="115"><input type="text" id="in-115" class="textbox" maxlength="1"><p class="letters" id="p-115"></div>
+      <div class="empty" id="116"><input type="text" id="in-116" class="textbox" maxlength="1"><p class="letters" id="p-116"></div>
+      <div class="empty" id="117"><input type="text" id="in-117" class="textbox" maxlength="1"><p class="letters" id="p-117"></div>
+      <div class="empty" id="118"><input type="text" id="in-118" class="textbox" maxlength="1"><p class="letters" id="p-118"></div>
+      <div class="empty" id="119"><input type="text" id="in-119" class="textbox" maxlength="1"><p class="letters" id="p-119"></div>
+      <div class="empty" id="120"><input type="text" id="in-120" class="textbox" maxlength="1"><p class="letters" id="p-120"></div>
     </div>
 
     <div id="clues">
 
     </div>
 
-    <div class="center-align">
+    <div class="right-align">
       <button type="button" class="mini ui button" name="Submit" id="submit">Submit</button>
     </div>
 
@@ -233,5 +243,6 @@
     <!-- <script type="text/javascript" src="components/crossword.js"></script>
     <script type="text/javascript" src="components/game.js"></script>
     <script type="text/javascript" src="components/user.js"></script> -->
+    <footer class="clearfix"></footer>
   </body>
 </html>
