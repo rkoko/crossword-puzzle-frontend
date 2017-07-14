@@ -10,6 +10,7 @@ function clickListener() {
   $('.empty').on('click', function() {
     let id = this.id
     $(`#in-${id}`).show()
+    $(`#p-${id}`).hide()
     inputListener(id)
   })
 }
@@ -18,9 +19,25 @@ function inputListener(id) {
   $(`#${id}`).on('keyup', `#in-${id}`, function(id) {
     let char = $(`#${id.target.id}`).submit().val()
     $(`#${id.target.id}`).hide()
-
     $(`#p-${id.target.id.split("-")[1]}`).html(`${char.toUpperCase()}`)
+    $(`#p-${id.target.id.split("-")[1]}`).show()
+    if (this.value.length == this.maxLength) {
+      if ($(`#in-${parseInt(id.target.id.split("-")[1])+1}`).closest('div').prop('class') !== undefined) {
+        $(`#in-${parseInt(id.target.id.split("-")[1])+1}`).show()
+        $(`#in-${parseInt(id.target.id.split("-")[1])+1}`).focus()
+        moveNext(parseInt(id.target.id.split("-")[1])+1)
+      } else if ($(`#in-${parseInt(id.target.id.split("-")[1])+8}`).closest('div').prop('class') !== undefined) {
+        $(`#in-${parseInt(id.target.id.split("-")[1])+8}`).show()
+        $(`#in-${parseInt(id.target.id.split("-")[1])+8}`).focus()
+        moveNext(parseInt(id.target.id.split("-")[1])+8)
+      }
+    }
   })
+}
+
+function moveNext(id) {
+  $(`#p-${id}`).hide()
+  inputListener(id)
 }
 
 
