@@ -41,17 +41,17 @@ function moveNext(id) {
 }
 
 
-function getWords(){
+function getWords() {
   fetch('http://localhost:3000/home')
-        .then(res => res.json())
-        .then(json => display(json))
-        .then(json => answerKey(json))
+    .then(res => res.json())
+    .then(json => display(json))
+    .then(json => answerKey(json))
 }
 
 var key = new AnswerKey()
 
-function answerKey(json){
-  for(let i = 0; i < json.length; i++){
+function answerKey(json) {
+  for (let i = 0; i < json.length; i++) {
     key.answers.push(json[i])
   }
   // debugger
@@ -60,8 +60,8 @@ function answerKey(json){
 function submitInput() {
   $('#submit').on('click', function(event) {
     let userInput = $('input')
-    let letters =[]
-    for (var i = 0; i<userInput.length; i++){
+    let letters = []
+    for (var i = 0; i < userInput.length; i++) {
       letters.push(userInput[i].value)
     }
     submittedAnswer(letters)
@@ -69,7 +69,7 @@ function submitInput() {
 
 }
 
-function submittedAnswer(letters){
+function submittedAnswer(letters) {
   debugger
   let oneAccross = letters.slice(0, 5)
   let twoDown = letters.slice(4, 8)
@@ -100,14 +100,14 @@ function submittedAnswer(letters){
   matchAnswers(key)
 }
 
-function matchAnswers(key){
+function matchAnswers(key) {
   let answers = key.answers.map(function(answer) {
     return answer.answer
   })
 
   if (answers.join("").toLowerCase() === key.input.join("").toLowerCase()) {
     alert("You Win!!!")
-    reset()///we need to check if this works
+    reset() ///we need to check if this works
   } else {
     alert("Try Again")
   }
@@ -119,6 +119,7 @@ function start() {
     event.stopPropagation()
     getWords()
     startPause()
+    displayHint()
   })
 }
 
