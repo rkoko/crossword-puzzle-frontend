@@ -1,9 +1,11 @@
 $(document).ready(function() {
   start()
   $('input').hide()
+  $('#username').show()
+  $('#age').show()
   clickListener()
+  userClickListener()
   submitInput()
-  // matchAnswers(submitInput, answer)
 })
 
 function clickListener() {
