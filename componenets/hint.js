@@ -2,7 +2,7 @@ let hintCount = 0
 
 function displayHint() {
   hintCount = 0
-  $('#controls').append('<button id="hint" onclick="hint()">Hint</button>')
+  $('#controls').append('<button class="ui button" id="hint" onclick="hint()">Hint</button>')
 }
 
 function hint() {

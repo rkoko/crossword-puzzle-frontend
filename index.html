@@ -11,7 +11,7 @@
     }
 
     #wrapper {
-      background-image: url('http://i.imgur.com/BpPL9Qs.jpg');
+      background-color: gray;
       background-size: 135%;
       background-repeat: no-repeat;
       background-position: top;
@@ -19,7 +19,7 @@
       width: 480px;
       height: 500px;
       margin-left: 75px;
-      padding-bottom: 1000px;
+      padding-bottom: 950px;
       text-align: left;
     }
 
@@ -117,7 +117,12 @@
     }
 
     #center {
-      margin-left: 47%;
+      padding-right: 30%;
+    }
+
+    #userdisplay {
+      margin-top: 20px;
+      padding-left: 20px;
     }
 
     </style>
@@ -125,43 +130,52 @@
   </head>
   <body>
 
-      <div id="userdisplay">
-        <h1>Signup/Login</h1>
+      <div id="userdisplay" class="ui equal width grid">
         <form id="userForm">
-            <label>Username</label>
+          <h1>Signup/Login</h1>
+          <label>Username: </label>
+          <div class="ui input focus">
+            <input id="username" type="text" name="username" placeholder="username">
+          </div><br><br>
 
-             <input id="username" type="text" name="username" placeholder="username"><br/>
+          <label>Age: </label>
+          <div class="ui input focus">
+            <input id="age" type="text" name="age" placeholder="age">
+          </div>
 
-             <label>Age</label>
-              <input id="age" type="text" name="age" placeholder="age"><br />
-
-            <button id="submitNewUser" class="ui button ok" type="submit">Submit</button>
+          <button id="submitNewUser" class="ui button ok" type="submit">Submit</button>
         </form>
-        </div>
-        <div id="usernamedisplay">
-
-        </div>
-
-
-    <div class="ui statistic" id="center">
-      <br>
-      <div class="value" id="output">
-        <!-- <p id="output" ></p> -->
-      </div><br><br>
-      <div class="label">
-        Time
-      </div><br>
-      <div id="controls" class="center-align">
-        <button class="large ui button" id="startPause" onclick="startPause()">Pause</button>
       </div>
+
+      <div id="usernamedisplay">
+
+      </div>
+
+      <div class="ui statistic center-align" id="center">
+        <br>
+        <div class="value" id="output">
+          <!-- <p id="output" ></p> -->
+        </div><br><br>
+        <div class="label">
+          Time
+        </div><br>
+        <div id="controls" class="center-align">
+        </div>
+      </div>
+
+
+    <div class="ui three item menu">
+      <button class="large ui button item" id="startPause" onclick="startPause()">Pause</button>
+
+      <button type="button" class="massive ui button item" id="generate">Generate a Crossword!</button><br><br>
+
+      <button type="button" class="large ui button item" name="Submit" id="submit">Submit</button>
     </div>
 
     <div class="center-align">
-      <button type="button" class="massive ui button" id="generate">Generate a Crossword!</button><br><br>
     </div>
 
     <div class="center-align">
-      <button type="button" class="large ui button" name="Submit" id="submit">Submit</button>
     </div><br><br><br><br>
 
     <div class="cont">
